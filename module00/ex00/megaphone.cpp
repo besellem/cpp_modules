@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:46:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/20 15:34:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/20 19:10:23 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int		main(int ac, char **av) {
 	
 	for (int i = 1; i < ac; ++i) {
 		std::cout << to_upper(av[i]);
-		if ((i + 1) < ac) {
-			std::cout << " ";
-		}
 	}
 	std::cout << std::endl;
 	return (0);
