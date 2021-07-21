@@ -6,18 +6,20 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/07/21 17:46:22 by besellem         ###   ########.fr        #
+#    Updated: 2021/07/21 22:19:36 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	phonebook
 
 SRCS		:=	PhoneBook.cpp \
+				Contact.cpp \
 				main.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-INCS		:=	PhoneBook.hpp
+INCS		:=	PhoneBook.hpp \
+				Contact.hpp
 
 CC			:=	clang++
 CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:45:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/21 18:22:42 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/22 00:41:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 int	main(void) {
 	
 	PhoneBook	pb;
-	char		buffer[ENTRY_LEN_MAX];
+	std::string	buffer;
+	bool		last_command = true;
 
 	do {
+		last_command ? std::cout << GREEN "> " CLR : std::cout << RED "> " CLR;
+		std::getline(std::cin, buffer);
 		
-		std::cout << "> ";
-		std::cin >> buffer;
+		last_command = true;
 		
-		if (0 == strcmp(buffer, "ADD")) {
+		if (std::cin.eof() || buffer == "EXIT") {
+			pb.exit();
+		} else if (buffer == "ADD") {
 			pb.add();
-		} else if (0 == strcmp(buffer, "PRINT")) {
+		} else if (buffer == "PRINT") {
 			pb.print_entries();
-		} else if (0 == strcmp(buffer, "EXIT")) {
-			break ;
+		} else if (buffer == "SEARCH") {
+			pb.search();
 		} else {
 			std::cout << "Don't know this command !" << std::endl;
+			last_command = false;
 		}
-		
+
 	} while (true);
 	
 	return (EXIT_SUCCESS);
