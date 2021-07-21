@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/07/20 15:19:16 by besellem         ###   ########.fr        #
+#    Updated: 2021/07/21 12:05:30 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
 
 .c.o:
 			@echo "Compiling ..."
-			@$(CC) $(CPPFLAGS) -c $< -o $(<:.c=.o) -I $(INCS)
+			@$(CC) $(CPPFLAGS) -c $< -o $(<:.c=.o)
 
 $(NAME):	$(OBJS)
 			@$(CC) $(CPPFLAGS) -o $(NAME) $(OBJS)
