@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:07:20 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/22 00:40:55 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/22 18:02:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,11 @@ class	PhoneBook {
 	private:
 
 		Contact	contacts[MAX_ENTRIES];
-		int		_entry_current_index;
+		int					_entry_current_index;
+		const unsigned int	_padding;
 
-		void	_get_input_entry(std::string, int, std::string &) const;
-		void	_print_entry(std::string, std::string, std::string) const;
+		void	_get_input_entry(const char *, int, std::string &) const;
+		void	_print_entry(std::string, const char *, const char *) const;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 17:45:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/22 00:41:27 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/22 16:42:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ int	main(void) {
 			pb.exit();
 		} else if (buffer == "ADD") {
 			pb.add();
-		} else if (buffer == "PRINT") {
-			pb.print_entries();
 		} else if (buffer == "SEARCH") {
 			pb.search();
 		} else {

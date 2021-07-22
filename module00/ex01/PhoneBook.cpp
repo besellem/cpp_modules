@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:07:31 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/22 00:40:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/22 18:02:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,11 @@
 #include <string>
 #include <iomanip>
 
-PhoneBook::PhoneBook(void) : _entry_current_index(0) {
-	return ;
+PhoneBook::PhoneBook(void) : _entry_current_index(0), _padding(10) {
+	
+	for (int i = 0; i < MAX_ENTRIES; ++i) {
+		this->contacts[i].clear();
+	}
 }
 
 PhoneBook::~PhoneBook(void) {
@@ -23,27 +26,29 @@ PhoneBook::~PhoneBook(void) {
 }
 
 
-void	PhoneBook::_get_input_entry(std::string message, int padding, std::string &entry) const {
+void	PhoneBook::_get_input_entry(const char *message, int padding, std::string &entry) const {
 
+	if (!message)
+		return ;
 	std::cout << std::setw(padding) << "" << message;
 	std::getline(std::cin, entry);
 }
 
-void	PhoneBook::_print_entry(std::string entry, std::string prefix, std::string suffix) const {
+void	PhoneBook::_print_entry(std::string entry, const char *prefix, const char *suffix) const {
 
-	if (!prefix.empty()) { std::cout << prefix; };
+	if (prefix) { std::cout << prefix; };
 
 	if (!entry.empty()) {
 		
-		if (entry.size() > PADD_SZ)
+		if (entry.size() > this->_padding)
 			std::cout << entry.substr(0, 9) << ".";
 		else
-			std::cout << std::setw(PADD_SZ) << entry;
+			std::cout << std::setw(this->_padding) << entry;
 	}
 	else
-		std::cout << std::setw(PADD_SZ) << "";
+		std::cout << std::setw(this->_padding) << "";
 
-	if (!suffix.empty()) { std::cout << suffix; };
+	if (suffix) { std::cout << suffix; };
 }
 
 void	PhoneBook::search(void) const {
@@ -54,7 +59,6 @@ void	PhoneBook::search(void) const {
 	long 		index;
 
 	this->print_entries();
-
 	std::cout << std::endl;
 
 	do {
@@ -121,7 +125,7 @@ void	PhoneBook::print_entries(void) const {
 		
 		if (this->contacts[i].is_empty())
 			continue ;
-		std::cout << std::setw(PADD_SZ) << i;
+		std::cout << std::setw(this->_padding) << i;
 		this->_print_entry(this->contacts[i].first_name, "|",  "|");
 		this->_print_entry(this->contacts[i].last_name,   "",  "|");
 		this->_print_entry(this->contacts[i].nickname,    "",   "");

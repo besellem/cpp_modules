@@ -6,22 +6,23 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 21:54:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/21 22:54:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/22 17:54:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 
 Contact::Contact(void) {
-	return ;
+	
+	this->clear();
 }
 
 Contact::~Contact(void) {
-	return ;
 }
 
 
 void	Contact::clear(void) {
+	
 	this->first_name.clear();
 	this->last_name.clear();
 	this->nickname.clear();
@@ -30,6 +31,7 @@ void	Contact::clear(void) {
 }
 
 bool	Contact::is_empty(void) const {
+
 	return (this->first_name.empty() &&
 			this->last_name.empty() &&
 			this->nickname.empty() &&

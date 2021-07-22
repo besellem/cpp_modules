@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/07/21 22:19:36 by besellem         ###   ########.fr        #
+#    Updated: 2021/07/22 13:26:56 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ INCS		:=	PhoneBook.hpp \
 				Contact.hpp
 
 CC			:=	clang++
-CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g3
 
 .c.o:
 			@echo "Compiling ..."
