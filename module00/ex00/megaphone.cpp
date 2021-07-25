@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/20 13:46:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/21 17:52:13 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/25 10:36:02 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*to_upper(char *s)
 {
 	for (int i = 0; s[i]; ++i) {
-		s[i] = toupper(s[i]);
+		s[i] = std::toupper(s[i]);
 	}
 	return (s);
 }

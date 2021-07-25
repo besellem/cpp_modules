@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:07:31 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/22 18:02:38 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/25 09:02:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ void	PhoneBook::_print_entry(std::string entry, const char *prefix, const char *
 
 void	PhoneBook::search(void) const {
 
-	Contact		tmp;
+	Contact		contact;
 	std::string	buffer;
-	char		*ptr = NULL;
 	long 		index;
+	size_t		p = 0;
 
 	this->print_entries();
 	std::cout << std::endl;
@@ -69,18 +69,29 @@ void	PhoneBook::search(void) const {
 			this->exit();
 		}
 
-		index = strtol(buffer.data(), &ptr, 10);
-		if (index < 0 || index >= MAX_ENTRIES || buffer.data() == ptr) {
+		try {
+			index = std::stol(buffer, &p);
+		}
+		catch (std::invalid_argument) {
 			std::cout << RED "      Error: " CLR "Please retry" << std::endl;
 			continue ;
 		}
 		
-		tmp = this->contacts[index];
-		std::cout << std::setw(6) << "" << "first_name :     " << tmp.first_name << std::endl;
-		std::cout << std::setw(6) << "" << "last_name :      " << tmp.last_name << std::endl;
-		std::cout << std::setw(6) << "" << "nickname :       " << tmp.nickname << std::endl;
-		std::cout << std::setw(6) << "" << "phone_number :   " << tmp.phone_number << std::endl;
-		std::cout << std::setw(6) << "" << "darkest_secret : " << tmp.darkest_secret << std::endl;
+		if (index < 0 || index >= MAX_ENTRIES || 0 == p) {
+			std::cout << RED "      Error: " CLR "Please retry" << std::endl;
+			continue ;
+		}
+		else if (this->contacts[index].is_empty()) {
+			std::cout << RED "      Error: " CLR "This contact is empty" << std::endl;
+			continue ;
+		}
+
+		contact = this->contacts[index];
+		std::cout << std::setw(6) << "" << "first_name :     " << contact.first_name << std::endl;
+		std::cout << std::setw(6) << "" << "last_name :      " << contact.last_name << std::endl;
+		std::cout << std::setw(6) << "" << "nickname :       " << contact.nickname << std::endl;
+		std::cout << std::setw(6) << "" << "phone_number :   " << contact.phone_number << std::endl;
+		std::cout << std::setw(6) << "" << "darkest_secret : " << contact.darkest_secret << std::endl;
 		
 		std::cout << std::endl;
 		break ;
