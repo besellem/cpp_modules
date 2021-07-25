@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 16:22:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/25 16:38:37 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/25 19:04:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,32 +15,53 @@
 
 int	main(int ac, char **av) {
 
-	(void)ac;
-	(void)av;
+	if (ac != 4 || std::strlen(av[2]) == 0) {
 
-	if (ac != 4) {
-
-		std::cout << "usage: filename  string_to_find  string_to_replace" << std::endl;
+		std::cout << "usage: filename string_to_find string_to_replace" << std::endl;
 		return (1);
 	}
 
+	std::string		content;
 	std::string		out_name = av[1];
 	out_name += ".replace";
 	
 	std::ifstream	ifs(av[1]);
+	if (ifs.fail()) {
+		std::cout << "Error: Cannot open '" << av[1] << "'" << std::endl;
+		return 1;
+	}
+
 	std::ofstream	ofs(out_name);
-	std::string		content;
+	if (ofs.fail()) {
+		std::cout << "Error: Cannot create '" << out_name << "'" << std::endl;
+		ifs.close();
+		return 1;
+	}
 
-	
-	// content.find()
+	do {
+		
+		std::getline(ifs, content);
 
-	std::cout << out_name << std::endl;
+		if (ifs.eof())
+			break ;
 
+		while (true) {
 
+			size_t	idx = content.find(av[2]);
+			
+			if (idx == std::string::npos) {
+				ofs << content;
+				break ;
+			}
+			ofs << content.substr(0, idx) << av[3];
+			content = content.substr(idx + std::strlen(av[2]));
+		}
+		ofs << std::endl;
 
-	
-	// ifs.close();
-	// ofs.close();
+	} while (true);
+
+	ifs.close();
+	ofs.close();
 
 	return 0;	
 }
