@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 19:09:08 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/25 19:46:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/25 21:36:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ Karen::~Karen(void) {
 	
 }
 
+
 void	Karen::complain(std::string level) {
 
 	t_lookup	table[4] = {
@@ -28,12 +29,19 @@ void	Karen::complain(std::string level) {
 		{"WARNING", &Karen::_warning},
 		{"ERROR",   &Karen::_error}
 	};
+	void		(Karen::*ptr)(void);
 
 	for (int i = 0; i < 4; ++i) {
 
 		if (table[i].str == level) {
 
-			// table[i].f();
+			std::cout << "[ " << level << " ]" << std::endl;
+
+			ptr = table[i].f;
+			(this->*ptr)();
+
+			std::cout << std::endl;
+			
 			break ;
 		}
 	}

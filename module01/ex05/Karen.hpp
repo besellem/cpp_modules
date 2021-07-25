@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 19:09:10 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/25 19:42:00 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/25 21:30:58 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ class Karen {
 	public:
 		Karen(void);
 		~Karen(void);
-
-		void	(Karen::*f)();
 
 		void	complain(std::string level);
 	

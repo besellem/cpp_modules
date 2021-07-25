@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 16:22:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/25 19:04:50 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/25 21:42:58 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int ac, char **av) {
 
 	if (ac != 4 || std::strlen(av[2]) == 0) {
 
-		std::cout << "usage: filename string_to_find string_to_replace" << std::endl;
+		std::cout << "usage: ./replace filename string_to_find string_to_replace" << std::endl;
 		return (1);
 	}
 

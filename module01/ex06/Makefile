@@ -6,14 +6,14 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/07/25 11:19:46 by besellem         ###   ########.fr        #
+#    Updated: 2021/07/25 21:33:59 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	karenFilter
 
-SRCS		:=	Karen.cpp \
-				main.cpp
+SRCS		:=	main.cpp \
+				Karen.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
