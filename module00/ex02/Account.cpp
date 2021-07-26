@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/22 00:47:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/25 10:58:32 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/26 12:31:48 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,8 +124,6 @@ void	Account::displayStatus(void) const {
 
 void	Account::_displayTimestamp(void) {
 
-		return ;
-	
 	const time_t	now = std::time(nullptr);
 	const tm		*ltm = std::localtime(&now);
 

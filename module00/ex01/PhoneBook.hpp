@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/21 12:07:20 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/22 18:02:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/26 16:45:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,9 @@
 # include <iostream>
 # include "Contact.hpp"
 
-# define ENTRY_LEN_MAX 512
 # define MAX_ENTRIES   8
 
-# define PADD_SZ       10 /* padding size */
-
+/* Colors */
 # define GREEN         "\e[1;32m"
 # define RED           "\e[1;31m"
 # define CLR           "\e[0m"
@@ -35,18 +33,17 @@ class	PhoneBook {
 		void	search(void) const;
 		void	add(void);
 		void	exit(void) const;
-		void	print_entries(void) const;
-		void	reset_entry(int);
 
 
 	private:
 
-		Contact	contacts[MAX_ENTRIES];
-		int					_entry_current_index;
-		const unsigned int	_padding;
+		Contact						contacts[MAX_ENTRIES];
+		int							_entry_current_index;
+		const static unsigned int	_padding;
 
-		void	_get_input_entry(const char *, int, std::string &) const;
+		void	_get_input_entry(const char *, std::string &) const;
 		void	_print_entry(std::string, const char *, const char *) const;
+		void	_print_entries(void) const;
 
 };
 
