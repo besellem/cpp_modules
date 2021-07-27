@@ -25,15 +25,19 @@ int	main(int ac, char **av) {
 
 	std::string		content;
 	std::string		out_name = av[1];
-	out_name += ".replace";
+	out_name.append(".replace");
 	
-	std::ifstream	ifs(av[1]);
+	std::ifstream	ifs;
+
+	ifs.open(av[1]);
 	if (ifs.fail()) {
 		std::cout << "Error: Cannot open '" << av[1] << "'" << std::endl;
 		return 1;
 	}
 
-	std::ofstream	ofs(out_name);
+	std::ofstream	ofs;
+
+	ofs.open(out_name);
 	if (ofs.fail()) {
 		std::cout << "Error: Cannot create '" << out_name << "'" << std::endl;
 		ifs.close();
