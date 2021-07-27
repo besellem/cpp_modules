@@ -12,6 +12,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <iosfwd>
+#include <cstring>
 
 int	main(int ac, char **av) {
 
