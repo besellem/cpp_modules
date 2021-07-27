@@ -14,6 +14,8 @@
 # define PHONEBOOK_HPP
 
 # include <iostream>
+# include <cstdlib>
+
 # include "Contact.hpp"
 
 # define MAX_ENTRIES   8

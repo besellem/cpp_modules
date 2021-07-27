@@ -79,7 +79,7 @@ void	PhoneBook::search(void) const {
 	Contact		contact;
 	std::string	buffer;
 	long 		index;
-	size_t		p = 0;
+	char		*ptr = NULL;
 
 	this->_print_entries();
 	std::cout << std::endl;
@@ -92,15 +92,9 @@ void	PhoneBook::search(void) const {
 			this->exit();
 		}
 
-		try {
-			index = std::stol(buffer, &p);
-		}
-		catch (std::invalid_argument) {
-			std::cout << RED "      Error: " CLR "Please retry" << std::endl;
-			continue ;
-		}
-		
-		if (index < 0 || index >= MAX_ENTRIES || 0 == p) {
+		index = std::strtol(buffer.data(), &ptr, 10);
+
+		if (index < 0 || index >= MAX_ENTRIES || buffer.data() == ptr) {
 			std::cout << RED "      Error: " CLR "Please retry" << std::endl;
 			continue ;
 		}

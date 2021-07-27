@@ -12,6 +12,7 @@
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
 
 int		Account::_nbAccounts = 0;
 int		Account::_totalAmount = 0;
@@ -124,7 +125,7 @@ void	Account::displayStatus(void) const {
 
 void	Account::_displayTimestamp(void) {
 
-	const time_t	now = std::time(nullptr);
+	const time_t	now = std::time(NULL);
 	const tm		*ltm = std::localtime(&now);
 
 	std::cout << "[";
