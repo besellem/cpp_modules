@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/26 15:24:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/27 15:53:14 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ Fixed::Fixed(void) : _fixed(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Fixed::Fixed(const int fixed) : _fixed(*(int *)&fixed) {
+Fixed::Fixed(const int fixed) {
 	
+	float	tmp = fixed;
+	this->_fixed = *(int *)&tmp;
+
 	std::cout << "Int constructor called" << std::endl;
 }
 
@@ -59,12 +62,8 @@ void		Fixed::setRawBits(int const raw) {
 	this->_fixed = raw;
 }
 
-void		Fixed::setRawBits(float const raw) {
-	this->_fixed = *(int *)(&raw);
-}
-
 int			Fixed::toInt(void) const {
-	return *(int *)&this->_fixed;
+	return *(float *)&this->_fixed;
 }
 
 float		Fixed::toFloat(void) const {
@@ -74,6 +73,6 @@ float		Fixed::toFloat(void) const {
 
 std::ostream &		operator<<(std::ostream &out, const Fixed &fixed) {
 	
-	out << (float)fixed.getRawBits();
+	out << fixed.toFloat();
 	return out;
 }

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/26 14:45:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/27 15:47:44 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class Fixed {
 
 		int			getRawBits(void) const;
 		void		setRawBits(int const raw);
-		void		setRawBits(float const raw);
 		int			toInt(void) const;
 		float		toFloat(void) const;
 
