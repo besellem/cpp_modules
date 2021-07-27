@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/27 15:57:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/27 16:14:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,6 @@ Fixed::~Fixed(void) {
 	std::cout << "Destructor called" << std::endl;
 }
 
-
-Fixed &		Fixed::operator=(const Fixed &src) {
-	
-	std::cout << "Assignation operator called" << std::endl;
-
-	if (this != &src)
-		this->setRawBits(src.getRawBits());
-
-	return *this;
-}
-
 int			Fixed::getRawBits(void) const {
 
 	return this->_fixed;
@@ -70,6 +59,77 @@ int			Fixed::toInt(void) const {
 
 float		Fixed::toFloat(void) const {
 	return *(float *)&this->_fixed;
+}
+
+
+Fixed &		Fixed::operator=(const Fixed &src) {
+	
+	std::cout << "Assignation operator called" << std::endl;
+
+	if (this != &src)
+		this->setRawBits(src.getRawBits());
+
+	return *this;
+}
+
+Fixed &		Fixed::operator>(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator<(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator>=(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator<=(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator==(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator!=(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator++(int nbr) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator--(int nbr) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator+(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator-(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator*(const Fixed &src) {
+
+	return *this;
+}
+
+Fixed &		Fixed::operator/(const Fixed &src) {
+
+	return *this;
 }
 
 
