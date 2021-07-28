@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/25 16:22:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/25 21:42:58 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/28 16:30:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,6 @@ int	main(int ac, char **av) {
 		
 		std::getline(ifs, content);
 
-		if (ifs.eof())
-			break ;
-
 		while (true) {
 
 			size_t	idx = content.find(av[2]);
@@ -62,6 +59,10 @@ int	main(int ac, char **av) {
 			ofs << content.substr(0, idx) << av[3];
 			content = content.substr(idx + std::strlen(av[2]));
 		}
+
+		if (ifs.eof())
+			break ;
+		
 		ofs << std::endl;
 
 	} while (true);
