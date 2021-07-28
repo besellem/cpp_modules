@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/27 16:13:49 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/28 17:27:05 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ class Fixed {
 		~Fixed(void);
 	
 		Fixed &		operator=(const Fixed &src);
-		Fixed &		operator>(const Fixed &src);
-		Fixed &		operator<(const Fixed &src);
-		Fixed &		operator>=(const Fixed &src);
-		Fixed &		operator<=(const Fixed &src);
-		Fixed &		operator==(const Fixed &src);
-		Fixed &		operator!=(const Fixed &src);
-		Fixed &		operator++(int nbr);
-		Fixed &		operator--(int nbr);
+		bool		operator>(const Fixed &src) const;
+		bool		operator<(const Fixed &src) const;
+		bool		operator>=(const Fixed &src) const;
+		bool		operator<=(const Fixed &src) const;
+		bool		operator==(const Fixed &src) const;
+		bool		operator!=(const Fixed &src) const;
+		Fixed &		operator++(void);
+		Fixed &		operator--(void);
 		Fixed &		operator+(const Fixed &src);
 		Fixed &		operator-(const Fixed &src);
 		Fixed &		operator*(const Fixed &src);

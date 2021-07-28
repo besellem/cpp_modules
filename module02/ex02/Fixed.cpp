@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/27 16:14:35 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/28 17:40:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,64 +71,62 @@ Fixed &		Fixed::operator=(const Fixed &src) {
 
 	return *this;
 }
+bool		Fixed::operator>(const Fixed &src) const  { return this->getRawBits() > src.getRawBits(); }
+bool		Fixed::operator<(const Fixed &src) const  { return this->getRawBits() < src.getRawBits(); }
+bool		Fixed::operator>=(const Fixed &src) const { return this->getRawBits() >= src.getRawBits(); }
+bool		Fixed::operator<=(const Fixed &src) const { return this->getRawBits() <= src.getRawBits(); }
+bool		Fixed::operator==(const Fixed &src) const { return this->getRawBits() == src.getRawBits(); }
+bool		Fixed::operator!=(const Fixed &src) const { return this->getRawBits() != src.getRawBits(); }
 
-Fixed &		Fixed::operator>(const Fixed &src) {
-
-	return *this;
-}
-
-Fixed &		Fixed::operator<(const Fixed &src) {
-
-	return *this;
-}
-
-Fixed &		Fixed::operator>=(const Fixed &src) {
+Fixed &		Fixed::operator++(void) { // pre increment
 
 	return *this;
 }
 
-Fixed &		Fixed::operator<=(const Fixed &src) {
-
+Fixed &		Fixed::operator++(void) { // post increment
+	
 	return *this;
 }
 
-Fixed &		Fixed::operator==(const Fixed &src) {
-
+Fixed &		Fixed::operator--(void) { // pre decrement
+	
 	return *this;
 }
 
-Fixed &		Fixed::operator!=(const Fixed &src) {
-
-	return *this;
-}
-
-Fixed &		Fixed::operator++(int nbr) {
-
-	return *this;
-}
-
-Fixed &		Fixed::operator--(int nbr) {
-
+Fixed &		Fixed::operator--(void) { // post decrement
+	
 	return *this;
 }
 
 Fixed &		Fixed::operator+(const Fixed &src) {
+	
+	const float	tmp = this->toFloat() + src.toFloat();
 
+	this->setRawBits(*(int *)&tmp);
 	return *this;
 }
 
 Fixed &		Fixed::operator-(const Fixed &src) {
+	
+	const float	tmp = this->toFloat() - src.toFloat();
 
+	this->setRawBits(*(int *)&tmp);
 	return *this;
 }
 
 Fixed &		Fixed::operator*(const Fixed &src) {
+	
+	const float	tmp = this->toFloat() * src.toFloat();
 
+	this->setRawBits(*(int *)&tmp);
 	return *this;
 }
 
 Fixed &		Fixed::operator/(const Fixed &src) {
+	
+	const float	tmp = this->toFloat() / src.toFloat();
 
+	this->setRawBits(*(int *)&tmp);
 	return *this;
 }
 

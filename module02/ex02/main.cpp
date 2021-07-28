@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/27 15:54:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/28 17:40:57 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,27 @@ int	main(void) {
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+
+	if (b < c) {
+		std::cout << "b < c" << std::endl;
+	} else {
+		std::cout << "b >= c" << std::endl;
+	}
 	
+	if (Fixed(10) == b) {
+		std::cout << Fixed(10) << " == " << b << std::endl;
+	} else {
+		std::cout << Fixed(10) << " != " << b << std::endl;
+	}
+
+	if (Fixed(42.42f) == c) {
+		std::cout << Fixed(42.42f) << " == " << c << std::endl;
+	} else {
+		std::cout << Fixed(42.42f) << " != " << c << std::endl;
+	}
+
+	std::cout << "c before post incrementation : " << c++ << std::endl;
+	std::cout << "c after post incrementation : " << c << std::endl;
+
 	return 0;
 }
