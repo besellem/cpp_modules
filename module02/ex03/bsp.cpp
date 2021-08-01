@@ -6,26 +6,22 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:45:20 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 17:36:59 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/01 15:58:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include "Point.hpp"
 
-static float	sign(Point const &p1, Point const &p2, Point const &p3) {
-	return (p1.getX() - p3.getX()) * (p2.getY() - p3.getY()) - \
-			(p2.getX() - p3.getX()) * (p1.getY() - p3.getY());
+// i'm not a math teacher
+float	area(Point p1, Point p2, Point p3) {
+	return (p2.getX() - p1.getX()) * (p3.getY() - p1.getY()) - (p2.getY() - p1.getY()) * (p3.getX() - p1.getX());
 }
 
-// i'm not a math teacher
 bool	bsp(Point const a, Point const b, Point const c, Point const point) {
-	
-	float	d1 = sign(point, a, b);
-	float	d2 = sign(point, b, c);
-	float	d3 = sign(point, c, a);
-	bool	has_neg = (d1 < 0) || (d2 < 0) || (d3 < 0);
-	bool	has_pos = (d1 > 0) || (d2 > 0) || (d3 > 0);
-
-	return !(has_neg && has_pos);
+	if (area(a, b, c) < 0)
+		return bsp(a, c, b, point);
+	if (area(a, b, point) > 0 && area(b, c, point) > 0 && area(c, a, point) > 0)
+		return (true);
+	return (false);
 }

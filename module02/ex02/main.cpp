@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 14:33:47 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/01 15:51:54 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int	main(void) {
 
 	std::cout << "min(" << c << ", " << b << ") : " << Fixed::min(c, b) << std::endl;
 	std::cout << "max(" << c << ", " << b << ") : " << Fixed::max(c, b) << std::endl;
-	std::cout << "max(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::min(-INFINITY, INFINITY) << std::endl;
-	std::cout << "max(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::max(-INFINITY, INFINITY) << std::endl;		std::cout << std::endl;
+	std::cout << "min(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::min(-INFINITY, INFINITY) << std::endl;
+	std::cout << "max(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::max(-INFINITY, INFINITY) << std::endl;
 
 	return 0;
 }
