@@ -6,12 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 11:44:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/29 14:33:47 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iomanip>
+#include <cmath>
 
 int	main(void) {
 	
@@ -52,14 +53,10 @@ int	main(void) {
 	std::cout << c << " * " << Fixed(2) << " : " << (c * Fixed(2)) << std::endl;
 	std::cout << c << " / " << Fixed(2) << " : " << (c / Fixed(2)) << std::endl;
 	std::cout << c << " / " << Fixed(0) << " : " << (c / Fixed(0)) << std::endl;
-	std::cout << -c.toFloat() / 0 << std::endl;
+	std::cout << c << " / " << Fixed(NAN) << " : " << (c / Fixed(NAN)) << std::endl;
 	std::cout << std::endl;
 
 	a = Fixed(0.f);
-	
-	std::cout << "b =  " << Fixed(5.05f) * Fixed(2) << std::endl;
-	std::cout << std::endl;
-
 	std::cout << "a before post incrementation : " << a++ << std::endl;
 	std::cout << "a after post incrementation :  " << a << std::endl;
 	std::cout << "a after pre incrementation :   " << ++a << std::endl;
@@ -68,9 +65,10 @@ int	main(void) {
 	std::cout << "a after post decrementation :  " << a << std::endl;
 	std::cout << std::endl;
 
-	std::cout << "c : " << c << ", b : " << b << std::endl;
-	std::cout << "min : " << Fixed::min(c, b) << std::endl;
-	std::cout << "max : " << Fixed::max(c, b) << std::endl;
+	std::cout << "min(" << c << ", " << b << ") : " << Fixed::min(c, b) << std::endl;
+	std::cout << "max(" << c << ", " << b << ") : " << Fixed::max(c, b) << std::endl;
+	std::cout << "max(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::min(-INFINITY, INFINITY) << std::endl;
+	std::cout << "max(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::max(-INFINITY, INFINITY) << std::endl;		std::cout << std::endl;
 
 	return 0;
 }

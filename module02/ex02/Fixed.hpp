@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 11:08:59 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/29 15:24:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ class Fixed {
 		Fixed(const Fixed &src);
 		~Fixed(void);
 	
-		Fixed &			operator=(const Fixed &src);
 		bool			operator>(const Fixed &src) const;
 		bool			operator<(const Fixed &src) const;
 		bool			operator>=(const Fixed &src) const;
@@ -35,10 +34,11 @@ class Fixed {
 		Fixed			operator-(const Fixed &src) const;
 		Fixed			operator*(const Fixed &src) const;
 		Fixed			operator/(const Fixed &src) const;
-		Fixed &			operator++(void);	// pre
-		Fixed			operator++(int);	// post
-		Fixed &			operator--(void);	// pre
-		Fixed			operator--(int);	// post
+		Fixed &			operator=(const Fixed &src);
+		Fixed &			operator++(void);	// pre incrementation
+		Fixed			operator++(int);	// post incrementation
+		Fixed &			operator--(void);	// pre decrementation
+		Fixed			operator--(int);	// post decrementation
 
 		int				getRawBits(void) const;
 		void			setRawBits(int const raw);
