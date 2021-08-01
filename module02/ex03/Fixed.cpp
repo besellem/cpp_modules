@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 15:23:11 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/29 17:27:04 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ Fixed::Fixed(const float fixed) {
 	}
 	else
 		this->_fixed = roundf(fixed * (1 << Fixed::_bits));
-	
-	// std::cout << "REAL : " << input << ", MINE : " << this->_fixed << std::endl;
 }
 
 Fixed::Fixed(const Fixed &src) {

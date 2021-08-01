@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/29 14:39:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 17:00:32 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/01 15:28:53 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,14 @@ float		Point::getY(void) const { return this->_y.toFloat(); }
 /////////////////
 Point &			Point::operator=(const Point &ref) {
 
+	Fixed	*x = (Fixed *)&this->_x;
+	Fixed	*y = (Fixed *)&this->_y;
+
 	if (this == &ref)
 		return *this;
+
+	*x = ref._x;
+	*y = ref._y;
+
 	return *this;
 }
