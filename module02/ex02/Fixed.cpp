@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 17:27:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/02 16:10:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ Fixed::Fixed(const int fixed) : _fixed(fixed << Fixed::_bits) {
 
 Fixed::Fixed(const float fixed) {
 
-	uint32_t	input = *(uint32_t *)&fixed;
-	float		tmp;
+	const uint32_t	input = *(uint32_t *)&fixed;
+	float			tmp;
 
 	if (input == 0x7F800000 || input == 0xFF800000) {
 		tmp = fixed < 0 ? -INFINITY : INFINITY;
 		this->_fixed = *(int *)&tmp;
 	}
 	else if (fixed != fixed) {
-		tmp = fixed < 0 ? -NAN : NAN;
+		tmp = NAN;
 		this->_fixed = *(int *)&tmp;
 	}
 	else
@@ -71,14 +71,16 @@ int			Fixed::toInt(void) const {
 
 float		Fixed::toFloat(void) const {
 
-	float	input = *(float *)&this->_fixed;
+	const float	input = *(float *)&this->_fixed;
 
-	if (input == INFINITY || input == -INFINITY || input != input) {
+	if (input == INFINITY || input == -INFINITY) {
 		return input;
 	}
 	return (float)this->_fixed / (1 << Fixed::_bits);
 }
 
+Fixed &				Fixed::max(Fixed &a, Fixed &b) { return (a.toFloat() < b.toFloat() ? a : b); }
+Fixed &				Fixed::min(Fixed &a, Fixed &b) { return (a.toFloat() > b.toFloat() ? a : b); }
 const Fixed &		Fixed::min(const Fixed &a, const Fixed &b) { return (a.toFloat() < b.toFloat() ? a : b); }
 const Fixed &		Fixed::max(const Fixed &a, const Fixed &b) { return (a.toFloat() > b.toFloat() ? a : b); }
 

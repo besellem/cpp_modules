@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/29 15:35:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/02 16:09:41 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ class Fixed {
 		void			setRawBits(int const raw);
 		int				toInt(void) const;
 		float			toFloat(void) const;
+		Fixed &					min(Fixed &a, Fixed &b);
+		Fixed &					max(Fixed &a, Fixed &b);
 		const static Fixed &	min(const Fixed &a, const Fixed &b);
 		const static Fixed &	max(const Fixed &a, const Fixed &b);
 

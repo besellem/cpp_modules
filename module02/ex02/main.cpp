@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/01 15:51:54 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/02 16:10:55 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,14 @@ int	main(void) {
 	std::cout << Fixed(10.01f) << " != " << b << " : " << (Fixed(10.01f) != b) << std::endl;
 	std::cout << std::endl;
 
-	std::cout << c << " + " << Fixed(-34.45f) << " : " << (c + Fixed(-34.45f)) << std::endl;
-	std::cout << c << " - " << Fixed(-34.45f) << " : " << (c - Fixed(-34.45f)) << std::endl;
+	std::cout << c << " + " << Fixed(34) << " : " << (c + Fixed(34)) << std::endl;
+	std::cout << c << " - (" << Fixed(-34.45f) << ") : " << (c - Fixed(-34.45f)) << std::endl;
 	std::cout << c << " * " << Fixed(2) << " : " << (c * Fixed(2)) << std::endl;
 	std::cout << c << " / " << Fixed(2) << " : " << (c / Fixed(2)) << std::endl;
 	std::cout << c << " / " << Fixed(0) << " : " << (c / Fixed(0)) << std::endl;
-	std::cout << c << " / " << Fixed(NAN) << " : " << (c / Fixed(NAN)) << std::endl;
 	std::cout << std::endl;
 
-	a = Fixed(0.f);
+	a = Fixed(0);
 	std::cout << "a before post incrementation : " << a++ << std::endl;
 	std::cout << "a after post incrementation :  " << a << std::endl;
 	std::cout << "a after pre incrementation :   " << ++a << std::endl;
@@ -69,6 +68,8 @@ int	main(void) {
 	std::cout << "max(" << c << ", " << b << ") : " << Fixed::max(c, b) << std::endl;
 	std::cout << "min(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::min(-INFINITY, INFINITY) << std::endl;
 	std::cout << "max(" << -INFINITY << ", " << INFINITY << ") : " << Fixed::max(-INFINITY, INFINITY) << std::endl;
+
+	std::cout << "a :       " << Fixed(-1.5f) << std::endl;
 
 	return 0;
 }
