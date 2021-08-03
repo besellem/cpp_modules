@@ -6,11 +6,11 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/08/01 16:10:29 by besellem         ###   ########.fr        #
+#    Updated: 2021/08/03 14:51:19 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	fixed
+NAME		:=	claptrap
 
 SRCS		:=	main.cpp \
 				ClapTrap.cpp

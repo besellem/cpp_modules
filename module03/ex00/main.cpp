@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:06:22 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/02 17:13:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/03 11:56:14 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,16 @@
 
 int	main(void) {
 	
+	ClapTrap	unknown;
 	ClapTrap	franck("Franck");
 	ClapTrap	eddie("Eddie");
 
+	franck.attack(unknown.getName());
 	franck.attack(eddie.getName());
 	franck.takeDamage(10);
 	franck.beRepaired(10);
-
-	eddie = ClapTrap("new_name");
-	std::cout << eddie.getName() << std::endl;
+	franck.takeDamage(20);
+	franck.beRepaired(10);
 
 	return 0;
 }

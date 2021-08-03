@@ -6,22 +6,24 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/08/03 14:51:41 by besellem         ###   ########.fr        #
+#    Updated: 2021/08/03 16:57:17 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	scavtrap
+NAME		:=	diamondtrap
 
 SRCS		:=	main.cpp \
 				ClapTrap.cpp \
-				ScavTrap.cpp
+				ScavTrap.cpp \
+				FragTrap.cpp \
+				DiamondTrap.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-INCS		:=	ClapTrap.hpp ScavTrap.hpp
+INCS		:=	ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
 CC			:=	clang++
-CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g3
+CPPFLAGS	:=	-Wall -Wextra -Werror -Wshadow -std=c++98 -g3
 
 .c.o:
 			@echo "Compiling ..."

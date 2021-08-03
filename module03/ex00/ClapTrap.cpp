@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:06:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/03 11:19:03 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/03 16:19:47 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,33 +61,47 @@ void		ClapTrap::attack(std::string const & target) {
 
 void		ClapTrap::takeDamage(unsigned int amount) {
 
-	const long	tmp = (this->_energy_points + this->_hit_points) - (long)amount;
-
 	if ((int)amount > this->_energy_points) {
-		this->_hit_points -= (amount - this->_energy_points);
+		this->_hit_points -= ((int)amount - this->_energy_points);
 		this->_energy_points = 0;
 	} else {
 		this->_energy_points -= amount;
 	}
 	
-	if (tmp > 0) {
+	if (this->_hit_points <= 0 && this->_energy_points <= 0) {
 		std::cout << "ClapTrap " << this->getName() \
-				  << " takes " << amount << " points of damage!" << std::endl;
+				  << " takes " << amount << " points of damage and it dies!" << std::endl;
 	}
 	else {
-		
 		std::cout << "ClapTrap " << this->getName() \
-				  << " takes " << amount << " points of damage and it died!" << std::endl;
+				  << " takes " << amount << " points of damage!" << std::endl;
 	}
 }
 
 void		ClapTrap::beRepaired(unsigned int amount) {
 
-	if ((this->_hit_points + amount) > ClapTrap::_initial_hit_points) {
-		this->_energy_points = this->_hit_points;
-		this->_hit_points = ClapTrap::_initial_hit_points;
+	if (this->_hit_points <= 0 && this->_energy_points <= 0) {
+		
+		std::cout << "ClapTrap " << this->getName() \
+				  << " cannot be restored, it died tragically ..." << std::endl;
+		return ;
 	}
 
-	std::cout << "ClapTrap " << this->getName() \
-			  << " restored " << amount << " points!" << std::endl;
+	if ((this->_hit_points + amount) > ClapTrap::_initial_hit_points) {
+		this->_energy_points += this->_hit_points - ClapTrap::_initial_hit_points + amount;
+		this->_hit_points = ClapTrap::_initial_hit_points;
+	} else {
+		this->_hit_points = amount;
+	}
+
+	if (this->_hit_points >= ClapTrap::_initial_hit_points &&
+		this->_energy_points >= ClapTrap::_initial_energy_points) {
+
+		std::cout << "ClapTrap " << this->getName() \
+				  << " restored completely!" << std::endl;
+	} else {
+
+		std::cout << "ClapTrap " << this->getName() \
+				  << " restored " << amount << " points!" << std::endl;
+	}
 }
