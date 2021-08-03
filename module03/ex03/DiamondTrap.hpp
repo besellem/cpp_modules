@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:50:10 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/03 16:54:09 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/03 17:04:37 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class DiamondTrap : public ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap {
 
 	public:
 		DiamondTrap(void);
