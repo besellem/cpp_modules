@@ -20,8 +20,8 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name, 100, 50, 20) {
 	std::cout << "ScavTrap string constructor called" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &ref) {
-	*this = ref;
+ScavTrap::ScavTrap(const ScavTrap &ref) : ClapTrap(ref) {
+	return ;
 }
 
 ScavTrap::~ScavTrap(void) {

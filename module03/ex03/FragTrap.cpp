@@ -20,8 +20,8 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name, 100, 100, 30) {
 	std::cout << "FragTrap string constructor called" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &ref) {
-	*this = ref;
+FragTrap::FragTrap(const FragTrap &ref) : ClapTrap(ref) {
+	return ;
 }
 
 FragTrap::~FragTrap(void) {

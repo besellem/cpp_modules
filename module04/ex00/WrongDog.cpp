@@ -16,8 +16,8 @@ WrongDog::WrongDog(void) : WrongAnimal("WrongDog") {
 	std::cout << "WrongDog default constructor called" << std::endl;
 }
 
-WrongDog::WrongDog(const WrongDog &ref) {
-	*this = ref;
+WrongDog::WrongDog(const WrongDog &ref) : WrongAnimal(ref) {
+	return ;
 }
 
 WrongDog::~WrongDog(void) {

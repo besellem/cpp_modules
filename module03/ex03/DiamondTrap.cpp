@@ -26,8 +26,13 @@ DiamondTrap::DiamondTrap(std::string name) :
 	std::cout << "DiamondTrap string constructor called" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &ref) {
-	*this = ref;
+DiamondTrap::DiamondTrap(const DiamondTrap &ref) :
+	ClapTrap(ref._name, ref._hit_points, ref._energy_points, ref._attack_damage),
+	FragTrap(ref),
+	ScavTrap(ref),
+	_clap_name(ref._name + "_clap_name") {
+	
+	return ;
 }
 
 DiamondTrap::~DiamondTrap(void) {

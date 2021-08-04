@@ -16,8 +16,8 @@ WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
 	std::cout << "WrongCat default constructor called" << std::endl;
 }
 
-WrongCat::WrongCat(const WrongCat &ref) {
-	*this = ref;
+WrongCat::WrongCat(const WrongCat &ref) : WrongAnimal(ref) {
+	return ;
 }
 
 WrongCat::~WrongCat(void) {
