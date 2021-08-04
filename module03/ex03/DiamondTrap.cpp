@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:50:04 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 11:53:26 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:57:40 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,4 @@ void			DiamondTrap::whoAmI(void) {
 	std::cout << "My name is [" << this->getName() \
 			  << "] but my Claptrap name is [" << this->_clap_name \
 			  << "]. I AM A DIAMOND TRAP !" << std::endl;
-
-
-	std::cout << "HP: " << this->_hit_points \
-			  << ", EP: " << this->_energy_points \
-			  << ", AD: " << this->_attack_damage \
-			  << std::endl;
-
-
 }
