@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:38:46 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 11:25:28 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 16:19:05 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ScavTrap : virtual public ClapTrap {
 	
 		ScavTrap &		operator=(const ScavTrap &ref);
 
+		virtual void	attack(std::string const & target);
 		void			guardGate(void) const;
 	
 };

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:50:10 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 11:26:40 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 16:27:06 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,8 @@ class DiamondTrap : public FragTrap, public ScavTrap {
 	
 		DiamondTrap &		operator=(const DiamondTrap &ref);
 
+		void				attack(std::string const & target);
 		void				whoAmI(void);
-	
-	private:
-		std::string			_clap_name;
 
 };
 

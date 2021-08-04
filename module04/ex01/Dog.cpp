@@ -16,8 +16,8 @@ Dog::Dog(void) : Animal("Dog") {
 	std::cout << "Dog default constructor called" << std::endl;
 }
 
-Dog::Dog(const Dog &ref) {
-	*this = ref;
+Dog::Dog(const Dog &ref) : Animal(ref) {
+	return ;
 }
 
 Dog::~Dog(void) {

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 14:15:22 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 15:49:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,13 +106,15 @@ Fixed &		Fixed::operator=(const Fixed &src) {
 	return *this;
 }
 
-Fixed &		Fixed::operator++(void) {			// pre increment
+// pre increment
+Fixed &		Fixed::operator++(void) {
 	
 	this->setRawBits(this->getRawBits() + 1);
 	return *this;
 }
 
-Fixed		Fixed::operator++(__attribute__((unused)) int _) {	// post increment
+// post increment
+Fixed		Fixed::operator++(__attribute__((unused)) int _) {
 	
 	Fixed	cpy = *this;
 
@@ -120,13 +122,15 @@ Fixed		Fixed::operator++(__attribute__((unused)) int _) {	// post increment
 	return cpy;
 }
 
-Fixed &		Fixed::operator--(void) {			// pre decrement
+// pre decrement
+Fixed &		Fixed::operator--(void) {
 	
 	this->setRawBits(this->getRawBits() - 1);
 	return *this;
 }
 
-Fixed		Fixed::operator--(__attribute__((unused)) int _) {	// post decrement
+// post decrement
+Fixed		Fixed::operator--(__attribute__((unused)) int _) {
 	
 	Fixed	cpy = *this;
 

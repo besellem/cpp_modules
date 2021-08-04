@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:21:50 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 14:00:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 16:01:19 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	main() {
 	std::cout << l->getType() << " " << std::endl;
 	k->makeSound();
 	l->makeSound();
+
+	delete i;
+	delete j;
+	delete k;
+	delete l;
 
 	return 0;
 }

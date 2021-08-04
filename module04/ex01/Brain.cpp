@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:07:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 14:10:38 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 15:52:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,9 @@ Brain &		Brain::operator=(const Brain &ref) {
 		return *this;
 	
 	for (size_t i = 0; i < 100; ++i) {
-		
+		this->_strs->copy()
 	}
 	
-
 	this->_strs = ref._strs;
 	return *this;
 }

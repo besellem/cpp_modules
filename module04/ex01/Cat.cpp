@@ -16,8 +16,8 @@ Cat::Cat(void) : Animal("Cat") {
 	std::cout << "Cat default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat &ref) {
-	*this = ref;
+Cat::Cat(const Cat &ref) : Animal(ref) {
+	return ;
 }
 
 Cat::~Cat(void) {

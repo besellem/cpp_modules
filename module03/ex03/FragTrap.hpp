@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:33:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 11:25:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 16:18:54 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class FragTrap : virtual public ClapTrap {
 	
 		FragTrap &		operator=(const FragTrap &ref);
 
+		virtual void	attack(std::string const & target);
 		void			highFivesGuys(void);
 	
 };
