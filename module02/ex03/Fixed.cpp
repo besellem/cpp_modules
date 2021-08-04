@@ -6,11 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 12:38:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/02 16:10:35 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 14:15:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <stdint.h>
 #include <cmath>
 
 const int	Fixed::_bits = 8;
@@ -111,7 +112,7 @@ Fixed &		Fixed::operator++(void) {			// pre increment
 	return *this;
 }
 
-Fixed		Fixed::operator++(__unused int _) {	// post increment
+Fixed		Fixed::operator++(__attribute__((unused)) int _) {	// post increment
 	
 	Fixed	cpy = *this;
 
@@ -125,7 +126,7 @@ Fixed &		Fixed::operator--(void) {			// pre decrement
 	return *this;
 }
 
-Fixed		Fixed::operator--(__unused int _) {	// post decrement
+Fixed		Fixed::operator--(__attribute__((unused)) int _) {	// post decrement
 	
 	Fixed	cpy = *this;
 
