@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:38:46 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/03 16:22:15 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:25:28 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 	public:
 		ScavTrap(void);
 		ScavTrap(std::string name);
 		ScavTrap(const ScavTrap &ref);
-		~ScavTrap(void);
+		virtual ~ScavTrap(void);
 	
 		ScavTrap &		operator=(const ScavTrap &ref);
 

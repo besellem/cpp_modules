@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:06:20 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/03 16:22:49 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/04 11:29:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ class ClapTrap {
 		std::string		_name;
 		int				_hit_points;
 		int				_energy_points;
+		int				_attack_damage;
 	
 	private:
-		int				_attack_damage;
 		int				_initial_hit_points;
 		int				_initial_energy_points;
 	
