@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:06:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/05 13:44:22 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:23:30 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define BRAIN_HPP
 
 # include <iostream>
+# include <sys/types.h>
 
 # define IDEAS_NBR 100
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:36:16 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/05 13:48:32 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:23:44 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CAT_HPP
 
 # include <iostream>
+# include <sys/types.h>
 # include "Animal.hpp"
 # include "Brain.hpp"
 

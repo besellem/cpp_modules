@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:53:50 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/05 13:48:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 15:23:40 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define DOG_HPP
 
 # include <iostream>
+# include <sys/types.h>
 # include "Animal.hpp"
 # include "Brain.hpp"
 
