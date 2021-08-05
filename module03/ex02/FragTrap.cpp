@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/03 16:33:08 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/03 16:38:38 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:10:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ FragTrap &		FragTrap::operator=(const FragTrap &ref) {
 	if (this == &ref)
 		return *this;
 	
-	this->_name = ref.getName();
+	this->_name = ref._name;
+	this->_hit_points = ref._hit_points;
+	this->_energy_points = ref._energy_points;
+	this->_attack_damage = ref._attack_damage;
 	return *this;
 }
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:06:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/03 16:19:47 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:08:48 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,10 @@ ClapTrap &		ClapTrap::operator=(const ClapTrap &ref) {
 	if (this == &ref)
 		return *this;
 	
-	this->_name = ref.getName();
+	this->_name = ref._name;
+	this->_hit_points = ref._hit_points;
+	this->_energy_points = ref._energy_points;
+	this->_attack_damage = ref._attack_damage;
 	return *this;
 }
 

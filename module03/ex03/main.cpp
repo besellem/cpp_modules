@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:06:22 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 17:00:41 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:49:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 int	main(void) {
 	
 	DiamondTrap	serge("serge");
-	DiamondTrap	serge_cpy("SergeCopy");
+	DiamondTrap	serge_cpy;
 
-	
+	serge_cpy.whoAmI();
+	serge_cpy = DiamondTrap("new");
+	serge_cpy.whoAmI();
 
 	serge.whoAmI();
 	serge.highFivesGuys();

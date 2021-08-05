@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:06:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 16:19:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 11:35:46 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,6 @@ ClapTrap::ClapTrap(std::string name) :
 	std::cout << "ClapTrap string constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string name, int hit_points, int energy_points, int attack_damage) :
-	_name(name),
-	_hit_points(hit_points),
-	_energy_points(energy_points),
-	_attack_damage(attack_damage),
-	_initial_hit_points(hit_points),
-	_initial_energy_points(energy_points) {
-	
-	std::cout << "ClapTrap complete constructor called" << std::endl;
-}
-
 ClapTrap::ClapTrap(const ClapTrap &ref) {
 	*this = ref;
 }
@@ -59,12 +48,18 @@ ClapTrap &		ClapTrap::operator=(const ClapTrap &ref) {
 	if (this == &ref)
 		return *this;
 	
-	this->_name = ref.getName();
+	this->_name = ref._name;
+	this->_hit_points = ref._hit_points;
+	this->_energy_points = ref._energy_points;
+	this->_attack_damage = ref._attack_damage;
 	return *this;
 }
 
 
-std::string		ClapTrap::getName(void) const { return this->_name; }
+std::string	ClapTrap::getName(void)         const { return this->_name; }
+int			ClapTrap::getHitPoints(void)    const { return this->_hit_points; }
+int			ClapTrap::getEnergyPoints(void) const { return this->_energy_points; }
+int			ClapTrap::getAttackDamage(void) const { return this->_attack_damage; }
 
 void		ClapTrap::attack(std::string const & target) {
 	std::cout << "ClapTrap [" << this->getName() \
