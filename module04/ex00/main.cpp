@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:21:50 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 16:01:19 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 12:15:20 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main() {
 	k->makeSound();
 	l->makeSound();
 
+	delete meta;
 	delete i;
 	delete j;
 	delete k;

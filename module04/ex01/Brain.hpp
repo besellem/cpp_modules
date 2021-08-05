@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:06:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 14:07:16 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 13:44:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define BRAIN_HPP
 
 # include <iostream>
+
+# define IDEAS_NBR 100
 
 class Brain {
 
@@ -24,9 +26,12 @@ class Brain {
 		virtual ~Brain(void);
 	
 		Brain &		operator=(const Brain &ref);
-	
+
+		virtual void			setIdea(uint, std::string);
+		std::string				getIdea(uint) const;
+
 	private:
-		std::string		_strs[100];
+		std::string		_ideas[IDEAS_NBR];
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:53:50 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 12:54:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 13:48:36 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Dog : public Animal {
 
@@ -27,6 +28,11 @@ class Dog : public Animal {
 		Dog &		operator=(const Dog &ref);
 
 		virtual void	makeSound(void) const;
+		void			setIdea(uint, std::string);
+		std::string		getIdea(uint) const;
+	
+	private:
+		Brain			*_brain;
 	
 };
 

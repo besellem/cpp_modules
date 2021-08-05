@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 14:07:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/04 15:52:27 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/05 13:44:28 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Brain::Brain(void) {
 
-	for (size_t i = 0; i < 100; ++i) this->_strs[i].clear();
+	for (size_t i = 0; i < IDEAS_NBR; ++i) this->_ideas[i].clear();
 	
 	std::cout << "Brain default constructor called" << std::endl;
 }
@@ -33,10 +33,21 @@ Brain &		Brain::operator=(const Brain &ref) {
 	if (this == &ref)
 		return *this;
 	
-	for (size_t i = 0; i < 100; ++i) {
-		this->_strs->copy()
-	}
+	for (size_t i = 0; i < IDEAS_NBR; ++i)
+		this->_ideas[i] = ref._ideas[i];
 	
-	this->_strs = ref._strs;
 	return *this;
+}
+
+
+void		Brain::setIdea(uint index, std::string str) {
+	
+	if (index >= IDEAS_NBR) return;
+	this->_ideas[index] = str;
+}
+
+std::string		Brain::getIdea(uint index) const {
+	
+	if (index >= IDEAS_NBR) return this->_ideas[IDEAS_NBR - 1];
+	return this->_ideas[index];
 }
