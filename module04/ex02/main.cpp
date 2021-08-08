@@ -1,39 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 14:06:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/08 16:48:17 by besellem         ###   ########.fr       */
+/*   Created: 2021/08/04 12:21:50 by besellem          #+#    #+#             */
+/*   Updated: 2021/08/08 16:56:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#include <iostream>
+#include "Animal.hpp"
+#include "Dog.hpp"
+#include "Cat.hpp"
+#include "Brain.hpp"
 
-# include <iostream>
-# include <sys/types.h>
+int	main() {
 
-# define IDEAS_NBR 100
-
-class Brain {
-
-	public:
-		Brain(void);
-		Brain(std::string type);
-		Brain(const Brain &ref);
-		virtual ~Brain(void);
+	const Animal	*dog = new Dog();
+	const Animal	*cat = new Cat();
 	
-		Brain &		operator=(const Brain &ref);
+	// cannot create a instance of Animal because it's an abstract class 
+	// Animal			animal; // won't work
 
-		virtual void			setIdea(uint, std::string &);
-		virtual std::string &	getIdea(uint);
+	delete dog;
+	delete cat;
 
-	private:
-		std::string		_ideas[IDEAS_NBR];
-
-};
-
-#endif
+	return 0;
+}
