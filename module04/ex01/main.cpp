@@ -20,34 +20,33 @@
 
 int	main() {
 
-	// Animal			*animals[ANIMAL_NBR];
+	Animal			*animals[ANIMAL_NBR];
 	
-	// size_t			i = 0;
-	// for (; i < (ANIMAL_NBR / 2); ++i) { animals[i] = new Dog(); }
-	// for (; i < ANIMAL_NBR; ++i)       { animals[i] = new Cat(); }
+	size_t			i = 0;
+	for (; i < (ANIMAL_NBR / 2); ++i) { animals[i] = new Dog(); }
+	for (; i < ANIMAL_NBR; ++i)       { animals[i] = new Cat(); }
 	
 
-	// for (size_t j = 0; j < IDEAS_NBR; ++j) {
-	// 	animals[0]->setIdea(j, "bonjour");
-	// 	animals[ANIMAL_NBR / 2]->setIdea(j, "bonjour toi");
-	// }
+	for (size_t j = 0; j < IDEAS_NBR; ++j) {
+		animals[0]->setIdea(j, "Hello");
+		animals[ANIMAL_NBR / 2]->setIdea(j, "Hello you");
+	}
 
-	// Cat		*ricky = new Cat(dynamic_cast<Cat &>(*animals[ANIMAL_NBR / 2]));
-	// Cat		rico;
+	Cat		*ricky = new Cat(dynamic_cast<Cat &>(*animals[ANIMAL_NBR / 2]));
+	Cat		rico;
 	
-	// rico = *ricky;
-	// for (size_t j = 0; j < IDEAS_NBR / 10; ++j) { std::cout << "by copy: " << rico.getIdea(i) << std::endl; }
-	// rico = Cat(*ricky);
-	// for (size_t j = 0; j < IDEAS_NBR / 10; ++j) { std::cout << "by ref: " << rico.getIdea(i) << std::endl; }
-	// delete ricky;
+	rico = *ricky;
+	for (size_t j = 0; j < IDEAS_NBR / 10; ++j) { std::cout << "by copy: " << rico.getIdea(i) << std::endl; }
+	rico = Cat(*ricky);
+	for (size_t j = 0; j < IDEAS_NBR / 10; ++j) { std::cout << "by ref: " << rico.getIdea(i) << std::endl; }
+	delete ricky;
 
 	// Dog		*ricky = new Dog(dynamic_cast<Dog &>(*animals[0]));
 	// Dog		rico = Dog(*ricky);
 	// for (size_t j = 0; j < IDEAS_NBR; ++j) { std::cout << "cpy: " << rico.getIdea(i) << std::endl; }
 	// delete ricky;
 
-	// for (i = 0; i < ANIMAL_NBR; ++i) { animals[i]->Animal::~Animal(); }
-	// for (i = 0; i < ANIMAL_NBR; ++i) { delete animals[i]; }
+	for (i = 0; i < ANIMAL_NBR; ++i) { delete animals[i]; }
 
 	const Animal	*dog = new Dog();
 	const Animal	*cat = new Cat();
