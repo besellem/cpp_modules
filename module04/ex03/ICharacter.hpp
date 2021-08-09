@@ -6,15 +6,16 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:23:34 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/09 15:39:27 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/09 18:41:39 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef ICHARACTER_HPP
+# define ICHARACTER_HPP
 
 # include <iostream>
 # include <sys/types.h>
+# include "AMateria.hpp"
 
 class ICharacter {
 	

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:25:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/08 21:42:53 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/09 18:44:44 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ AMateria::~AMateria(void) {
 
 AMateria &		AMateria::operator=(const AMateria &ref) {
 	
-	if (this == &ref)
-		return *this;
+	if (this == &ref) return *this;
 	
 	// To implement
 	return *this;
