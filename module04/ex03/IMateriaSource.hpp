@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.hpp                                       :+:      :+:    :+:   */
+/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/04 12:23:34 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/09 15:42:10 by besellem         ###   ########.fr       */
+/*   Created: 2021/08/09 16:20:19 by besellem          #+#    #+#             */
+/*   Updated: 2021/08/09 17:28:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AMATERIA_HPP
-# define AMATERIA_HPP
+#ifndef IMATERIA_SOURCE_HPP
+# define IMATERIA_SOURCE_HPP
 
 # include <iostream>
 # include <sys/types.h>
 
-class AMateria
+class IMateriaSource
 {
-	
 	public:
-		AMateria(std::string const & type);
-		AMateria(const AMateria &ref);
-		~AMateria(void);
-
-		std::string const &		getType() const; // Returns the materia type
-		virtual AMateria *		clone() const = 0;
-		virtual void			use(ICharacter & target);
-	
-	protected:
-		std::string		_type;
-	
+		virtual ~IMateriaSource() {}
+		virtual void learnMateria(AMateria*) = 0;
+		virtual AMateria *	createMateria(std::string const & type) = 0;
 };
 
 #endif
