@@ -6,15 +6,15 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 11:37:39 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 12:11:48 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 18:10:51 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
 Character::Character(std::string name) :
-	_inventory_idx(0),
-	_name(name) {
+	_name(name),
+	_inventory_idx(0) {
 	
 	for (int i = 0; i < 4; ++i) { this->_inventory[i] = NULL; }
 }
@@ -56,7 +56,7 @@ void					Character::unequip(int idx) {
 	// delete this->_inventory[idx];
 }
 
-void					Character::use(int idx, Character &target) {
+void					Character::use(int idx, ICharacter &target) {
 	
 	if (!(idx >= 0 && idx < 4) || this->_inventory_idx < idx) return ;
 	

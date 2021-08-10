@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:25:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 12:11:28 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 18:09:56 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,3 +35,8 @@ AMateria &		AMateria::operator=(const AMateria &ref) {
 
 
 std::string const &		AMateria::getType(void) const { return this->_type; }
+
+void			AMateria::use(ICharacter &ref) {
+	(void)ref;
+	std::cout << "HEREKF;GLJ\n";
+}

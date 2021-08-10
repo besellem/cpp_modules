@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:36:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 17:55:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 18:15:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Character : public ICharacter {
 		std::string const &		getName(void) const;
 		void					equip(AMateria *);
 		void					unequip(int);
-		void					use(int, Character &);
+		void					use(int, ICharacter &);
 	
 	private:
 		std::string				_name;

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:23:34 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 12:12:46 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 17:59:44 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <iostream>
 # include <sys/types.h>
 # include "AMateria.hpp"
+
+class AMateria;
 
 class ICharacter {
 	
