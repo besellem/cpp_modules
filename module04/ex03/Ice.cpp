@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/01 16:38:42 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/09 18:53:30 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 11:27:51 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Ice &		Ice::operator=(const Ice &ref) {
 	
 	if (this == &ref) return *this;
 
-	// To implement
+	this->_type = ref._type;
 	return *this;
 }
 

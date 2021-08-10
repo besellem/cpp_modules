@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:36:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/09 18:36:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 17:55:33 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,27 @@
 
 # include <iostream>
 # include <sys/types.h>
+# include "ICharacter.hpp"
 
-class Character {
+class Character : public ICharacter {
 	
 	public:
-		virtual ~Character() {}
-		
-		virtual std::string const &	getName() const = 0;		
-		virtual void				equip(AMateria *m) = 0;
-		virtual void				unequip(int idx) = 0;
-		virtual void				use(int idx, Character &target) = 0;
+		Character(std::string);
+		Character(const Character &);
+		virtual ~Character(void);
 	
+		Character &				operator=(const Character &);
+		
+		std::string const &		getName(void) const;
+		void					equip(AMateria *);
+		void					unequip(int);
+		void					use(int, Character &);
+	
+	private:
+		std::string				_name;
+		AMateria				*_inventory[4];
+		int						_inventory_idx;
+
 };
 
 #endif

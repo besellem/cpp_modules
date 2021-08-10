@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 16:20:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/09 18:35:44 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 17:41:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,16 @@
 
 # include <iostream>
 # include <sys/types.h>
+# include "AMateria.hpp"
 
-class IMateriaSource
-{
+class IMateriaSource {
+	
 	public:
-		virtual ~IMateriaSource() {}
+		virtual ~IMateriaSource(void) {}
 		
 		virtual void		learnMateria(AMateria *) = 0;
-		virtual AMateria *	createMateria(std::string const & type) = 0;
+		virtual AMateria *	createMateria(std::string const &) = 0;
+	
 };
 
 #endif

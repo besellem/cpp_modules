@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/09 18:50:11 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/09 18:53:21 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/10 11:27:45 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cure &		Cure::operator=(const Cure &ref) {
 	
 	if (this == &ref) return *this;
 
-	// To implement
+	this->_type = ref._type;
 	return *this;
 }
 
