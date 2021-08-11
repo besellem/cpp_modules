@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/10 17:42:11 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 18:14:58 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/11 17:22:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 
-MateriaSource::MateriaSource(void) : IMateriaSource() {
-	return ;
+MateriaSource::MateriaSource(void) :
+	IMateriaSource(),
+	_inventory_idx(0) {
+	
+	for (int i = 0; i < 4; ++i) { this->_inventory[i] = NULL; }
 }
 
 MateriaSource::MateriaSource(const MateriaSource &ref) : IMateriaSource(ref) {
-	return ;
+	*this = ref;
 }
 
 MateriaSource::~MateriaSource(void) {
@@ -31,7 +34,8 @@ MateriaSource &		MateriaSource::operator=(const MateriaSource &ref) {
 	
 	if (this == &ref) return *this;
 
-	// to implement
+	for (int i = 0; i < 4; ++i) { this->_inventory[i] = ref._inventory[i]; }
+	
 	return *this;
 }
 
