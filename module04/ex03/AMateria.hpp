@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:23:34 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 18:10:13 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/12 14:05:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class AMateria {
 
 		AMateria &		operator=(const AMateria &);
 
-		std::string const &		getType(void) const; // Returns the materia type
+		std::string const &		getType(void) const;
 		virtual AMateria *		clone(void) const = 0;
 		virtual void			use(ICharacter &);
 	

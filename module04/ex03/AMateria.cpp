@@ -6,14 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:25:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/10 18:09:56 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/12 14:04:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
 AMateria::AMateria(std::string const & type) : _type(type) {
-	// std::cout << "AMateria default constructor called" << std::endl;
+	return ;
 }
 
 AMateria::AMateria(const AMateria &ref) {
@@ -21,7 +21,7 @@ AMateria::AMateria(const AMateria &ref) {
 }
 
 AMateria::~AMateria(void) {
-	// std::cout << "AMateria destructor called" << std::endl;
+	return ;
 }
 
 
@@ -36,7 +36,6 @@ AMateria &		AMateria::operator=(const AMateria &ref) {
 
 std::string const &		AMateria::getType(void) const { return this->_type; }
 
-void			AMateria::use(ICharacter &ref) {
-	(void)ref;
-	std::cout << "HEREKF;GLJ\n";
+void			AMateria::use(ICharacter &target) {
+	(void)target;
 }
