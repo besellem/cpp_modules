@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 16:24:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/12 18:27:42 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/15 11:55:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,13 @@ Form::Form(std::string const &name, int grade2sign, int grade2exec) :
 		throw Form::GradeTooLowException();
 }
 
-Form::Form(Form const &ref)
+Form::Form(Form const &ref) :
+	_is_signed(ref.isSigned()),
+	_grade2sign(ref.getGradeToSign()),
+	_grade2exec(ref.getGradeToExecute()),
+	_name(ref.getName())
 {
-	*this = ref;
+	// *this = ref;
 }
 
 Form::~Form()
@@ -73,11 +77,15 @@ Form &					Form::operator=(Form const &ref)
 {
 	if (this == &ref)
 		return *this;
-	
+
+	int			*_grade2sign = (int *)&this->_grade2sign;
+	int			*_grade2exec = (int *)&this->_grade2exec;
+	std::string	*_name = (std::string *)&this->_name;
+
 	this->_is_signed = ref.isSigned();
-	// this->_grade2sign = ref.getGradeToSign();
-	// this->_grade2exec = ref.getGradeToExecute();
-	// this->_name = ref.getName();
+	*_grade2sign = ref.getGradeToSign();
+	*_grade2exec = ref.getGradeToExecute();
+	*_name = ref.getName();
 
 	return *this;
 }
