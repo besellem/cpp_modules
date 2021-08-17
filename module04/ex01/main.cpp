@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:21:50 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/08 16:51:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/17 14:13:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main() {
 		animals[ANIMAL_NBR / 2]->setIdea(j, str2);
 	}
 
-	Cat		*ricky = new Cat(dynamic_cast<Cat &>(*animals[ANIMAL_NBR / 2]));
+	Cat		*ricky = new Cat(dynamic_cast<Cat>(*animals[ANIMAL_NBR / 2]));
 	Cat		rico;
 	
 	for (size_t j = 0; j < IDEAS_NBR / 10; ++j) { std::cout << "ricky: " << ricky->getIdea(j) << std::endl; }

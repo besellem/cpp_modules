@@ -6,11 +6,15 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 16:24:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/17 12:29:05 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/17 14:38:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
+Form::Form(void) : _is_signed(false), _grade2exec(0), _grade2sign(0), _name("")
+{
+}
 
 Form::Form(std::string const &name, int grade2sign, int grade2exec) :
 	_is_signed(false),
