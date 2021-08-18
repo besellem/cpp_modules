@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 14:49:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/17 13:54:53 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/18 18:48:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,22 @@ void					Bureaucrat::signForm(Form &ref) const
 	{
 		std::cout << this->getName() << " cannot sign " GREEN \
 				  << ref.getName() << CLR_COLOR " because " \
+				  << e.what() << std::endl;
+	}
+}
+
+void					Bureaucrat::executeForm(Form const &form)
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << "[" RED << this->getName() << CLR_COLOR "] executs [" GREEN \
+				  << form.getName() << CLR_COLOR "]" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << "[" RED << this->getName() << CLR_COLOR "] cannot execute [" GREEN \
+				  << form.getName() << CLR_COLOR "] because: " \
 				  << e.what() << std::endl;
 	}
 }

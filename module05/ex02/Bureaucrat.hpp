@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 14:48:10 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/12 18:26:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/18 18:39:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Bureaucrat
 		void					lowerGrade(void);
 		void					upperGrade(void);
 		void					signForm(Form &) const;
+		void					executeForm(Form const &);
 	
 	private:
 		int						_grade;

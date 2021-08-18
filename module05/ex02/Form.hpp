@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/12 16:24:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/17 14:36:54 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/18 18:31:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Form
 		Form(void);
 		Form(std::string const &, int, int);
 		Form(Form const &);
-		~Form();
+		virtual ~Form();
 
 		Form &					operator=(Form const &);
 

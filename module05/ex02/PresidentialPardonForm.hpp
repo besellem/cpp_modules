@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 13:55:25 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/17 14:25:29 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/18 18:16:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,17 +21,14 @@ class PresidentialPardonForm : public Form
 {
 
 	public:
-		PresidentialPardonForm(Bureaucrat const &);
-		~PresidentialPardonForm();
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(std::string const);
+		PresidentialPardonForm(PresidentialPardonForm const &);
+		virtual ~PresidentialPardonForm();
 
 		PresidentialPardonForm &	operator=(PresidentialPardonForm const &);
 
-		const std::string &		getName(void) const;
-		int						getGradeToSign(void) const;
-		int						getGradeToExecute(void) const;
-		bool					isSigned(void) const;
-		
-		void					beSigned(Bureaucrat const &);
+		void						execute(Bureaucrat const &) const;
 
 	private:
 		bool					_is_signed;
