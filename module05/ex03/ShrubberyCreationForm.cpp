@@ -12,6 +12,8 @@
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
+#include <iosfwd>
+#include <cstring>
 
 ShrubberyCreationForm::ShrubberyCreationForm(void) :
 	Form("", 145, 137),
@@ -63,8 +65,9 @@ void				ShrubberyCreationForm::execute(Bureaucrat const &ref) const
 	if (ref.getGrade() > this->getGradeToExecute())
 		throw Form::GradeTooLowException();
 	
-	std::ofstream	ofs(ref.getName() + "_shrubbery");
-
+	std::ofstream	ofs;
+	
+	ofs.open(ref.getName() + "_shrubbery");
 	if (ofs.fail())
 	{
 		std::cerr << "Cannot create '" << (ref.getName() + "_shrubbery") << "'" << std::endl;

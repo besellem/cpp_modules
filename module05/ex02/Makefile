@@ -28,7 +28,7 @@ INCS		:=	Bureaucrat.hpp \
 				ShrubberyCreationForm.hpp
 
 CC			:=	clang++
-CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98 -g3
+CPPFLAGS	:=	-Wall -Wextra -Werror
 
 .c.o:
 			@echo "Compiling ..."
