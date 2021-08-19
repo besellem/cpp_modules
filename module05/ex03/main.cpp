@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/04 12:21:50 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/19 13:01:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/19 13:33:45 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,59 +16,26 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 int	main(void)
 {
-	Form			*form = NULL;
-	Bureaucrat		bob("bob", 1);
-	Bureaucrat		phil("phil", 40);
-	Bureaucrat		luc("luc", 150);
+	Intern	someRandomIntern;
+	Form	*rrf;
 
-	try
-	{
-		form = new PresidentialPardonForm("28A");
-		form->execute(bob);
-		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	rrf = someRandomIntern.makeForm("presidential pardon", "Bender");
+	rrf->execute(Bureaucrat("bob", 1));
+	delete rrf;
 
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	rrf->execute(Bureaucrat("phil", 1));
+	delete rrf;
 
-	try
-	{
-		form = new RobotomyRequestForm("28B");
-		form->execute(phil);
-		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	rrf = someRandomIntern.makeForm("shrubbery creation", "Bender");
+	rrf->execute(Bureaucrat("lucas", 1));
+	delete rrf;
 
-
-	try
-	{
-		form = new ShrubberyCreationForm("28C");
-		form->execute(luc);
-		delete form;
-		form = NULL;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
-	bob.executeForm(PresidentialPardonForm("45GCD"));
-	phil.executeForm(PresidentialPardonForm("45GCD"));
-
-	bob.executeForm(RobotomyRequestForm("74A"));
-	phil.executeForm(RobotomyRequestForm("74A"));
-	
-	phil.executeForm(ShrubberyCreationForm("T408"));
+	rrf = someRandomIntern.makeForm("not existing", "Bender");
 
 	return 0;
 }
