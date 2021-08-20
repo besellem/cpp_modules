@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   deserialize.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 15:31:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/20 03:20:07 by besellem         ###   ########.fr       */
+/*   Created: 2021/08/20 05:59:24 by besellem          #+#    #+#             */
+/*   Updated: 2021/08/20 06:00:41 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "ScalarConversion.hpp"
+#include "Data.hpp"
 
-int	main(int ac, char **av)
+Data *			deserialize(uintptr_t raw)
 {
-	ScalarConversion	convs;
-
-	if (ac != 2)
-	{
-		std::cerr << ERROR "number of arguments" << std::endl;
-		return 1;
-	}
-
-	try
-	{
-		convs = ScalarConversion(av[1]);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << ERROR << e.what() << std::endl;
-		return 1;
-	}
-
-	convs.print();
-
-	return 0;
+	return reinterpret_cast<Data *>(raw);
 }

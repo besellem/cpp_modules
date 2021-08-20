@@ -6,18 +6,19 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/08/20 06:04:41 by besellem         ###   ########.fr        #
+#    Updated: 2021/08/20 06:06:11 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		:=	convert
+NAME		:=	cereal
 
 SRCS		:=	main.cpp \
-				ScalarConversion.cpp
+				serialize.cpp \
+				deserialize.cpp
 
 OBJS		=	$(SRCS:.cpp=.o)
 
-INCS		:=	ScalarConversion.hpp
+INCS		:=	Data.hpp
 
 CC			:=	clang++
 CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98

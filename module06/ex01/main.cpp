@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/08/19 15:31:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/20 03:20:07 by besellem         ###   ########.fr       */
+/*   Created: 2021/08/20 05:56:57 by besellem          #+#    #+#             */
+/*   Updated: 2021/08/20 06:12:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Data.hpp"
 #include <iostream>
-#include "ScalarConversion.hpp"
 
-int	main(int ac, char **av)
+#define GREEN      "\e[1;32m"
+#define CLR_COLOR  "\e[0m"
+
+int	main(void)
 {
-	ScalarConversion	convs;
+	Data		*d = new Data(42, 4242, 42.42);
+	Data		*ptr;
 
-	if (ac != 2)
-	{
-		std::cerr << ERROR "number of arguments" << std::endl;
-		return 1;
-	}
+	ptr = deserialize(serialize(d));
 
-	try
-	{
-		convs = ScalarConversion(av[1]);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << ERROR << e.what() << std::endl;
-		return 1;
-	}
+	std::cout << "real: [" GREEN << d << CLR_COLOR "] serialize[" GREEN << serialize(d) << CLR_COLOR "]" << std::endl;
+	std::cout << "mine: [" GREEN << ptr << CLR_COLOR "] serialize[" GREEN << serialize(ptr) << CLR_COLOR "]" << std::endl;
 
-	convs.print();
+	delete d;
 
 	return 0;
 }
