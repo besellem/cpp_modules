@@ -6,31 +6,31 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 05:56:57 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/22 15:32:12 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/22 15:59:47 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Data.hpp"
 #include <iostream>
+#include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 #define GREEN      "\e[1;32m"
-#define CYAN       "\e[1;36m"
 #define CLR_COLOR  "\e[0m"
 
 int	main(void)
 {
-	Data		*old_ptr = new Data(42, 4242, 42.42);
-	Data		*new_ptr;
+	Base	*ptr = generate();
+	Base	&ref = *ptr;
 
-	new_ptr = deserialize(serialize(old_ptr));
-
-	std::cout << "before: [" GREEN << old_ptr << CLR_COLOR "] serialize[" GREEN << serialize(old_ptr) << CLR_COLOR "]" << std::endl;
-	std::cout << "  values: char[" CYAN << old_ptr->getChar() << CLR_COLOR "] int[" CYAN << old_ptr->getInt() << CLR_COLOR "] double[" CYAN << old_ptr->getDouble() << CLR_COLOR "]" << std::endl;
+	std::cout << "Identify by ptr: ";
+	identify(ptr);
 	
-	std::cout << "after : [" GREEN << new_ptr << CLR_COLOR "] serialize[" GREEN << serialize(new_ptr) << CLR_COLOR "]" << std::endl;
-	std::cout << "  values: char[" CYAN << new_ptr->getChar() << CLR_COLOR "] int[" CYAN << new_ptr->getInt() << CLR_COLOR "] double[" CYAN << new_ptr->getDouble() << CLR_COLOR "]" << std::endl;
+	std::cout << "Identify by ref: ";
+	identify(ref);
 
-	delete old_ptr;
+	delete ptr;
 
 	return 0;
 }
