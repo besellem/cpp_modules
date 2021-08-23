@@ -6,11 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/22 18:33:40 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/23 18:08:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/23 18:15:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
+
+# include <sys/types.h>
 
 template<typename T>
 class Array
