@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 15:31:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/20 03:20:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/23 13:23:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		std::cerr << ERROR "number of arguments" << std::endl;
+		std::cerr << ERROR "wrong number of arguments" << std::endl;
 		return 1;
 	}
 
