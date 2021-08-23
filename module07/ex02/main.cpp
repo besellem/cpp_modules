@@ -6,12 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/23 17:56:58 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/23 18:07:19 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/23 18:17:24 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "Array.hpp"
+#include <cstdlib>
+#include <ctime>
 
 #define RED        "\e[1;31m"
 #define CLR_COLOR  "\e[0m"
