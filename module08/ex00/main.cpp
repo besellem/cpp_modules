@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/26 18:21:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/26 18:37:09 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/27 00:54:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,42 @@ void	try2find(T &container, int val)
 
 int	main(void)
 {
-	std::list<int>	lst;
+	std::list<int>		lst;
+	std::vector<int>	vec;
+	std::deque<int>		deck;
 
 	lst.push_back(1);
 	lst.push_back(2);
 	lst.push_back(3);
+
+	vec.push_back(1);
+	vec.push_back(2);
+	vec.push_back(3);
+
+
+	deck.push_back(1);
+	deck.push_back(2);
+	deck.push_back(3);
+
+	// List
+	std::cout << "List:" << std::endl;
 	try2find(lst, -10);
 	try2find(lst, 2);
 	try2find(lst, 42);
+	std::cout << std::endl;
+
+	// Vector
+	std::cout << "Vector:" << std::endl;
+	try2find(vec, -10);
+	try2find(vec, 2);
+	try2find(vec, 42);
+	std::cout << std::endl;
+
+	// Deque
+	std::cout << "Deque:" << std::endl;
+	try2find(deck, -10);
+	try2find(deck, 2);
+	try2find(deck, 42);
+	
+	return 0;
 }
