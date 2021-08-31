@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/20 13:46:17 by besellem          #+#    #+#              #
-#    Updated: 2021/08/27 04:32:36 by besellem         ###   ########.fr        #
+#    Updated: 2021/08/31 18:46:24 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJS		=	$(SRCS:.cpp=.o)
 INCS		:=	Span.hpp
 
 CC			:=	clang++
-CPPFLAGS	:=	-Wall -Wextra -Werror -std=c++98
+CPPFLAGS	:=	-Wall -Wextra -Werror
 
 .c.o:
 			@echo "Compiling ..."
